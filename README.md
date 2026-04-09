@@ -1,21 +1,59 @@
-# Gerenciador de tarefas
+# Gerenciador de Tarefas
 
-Projeto React + Vite preparado para deploy estático.
+Aplicacao simples de lista de tarefas criada com React e Vite.
 
-## Medidas de segurança aplicadas
+O projeto permite:
 
-- Entradas do usuário são normalizadas antes de entrar no estado da aplicação.
-- Campos possuem limite de tamanho para reduzir abuso e dados inesperados.
-- O `index.html` inclui `Content-Security-Policy`, `Referrer-Policy` e `Permissions-Policy`.
-- Arquivos sensíveis de ambiente foram adicionados ao `.gitignore`.
+- adicionar tarefas
+- marcar tarefas como concluidas
+- remover tarefas da lista
 
-## Checklist antes de publicar no GitHub
+## Tecnologias
 
-- Nunca coloque segredos, tokens ou chaves em arquivos do frontend.
-- Se precisar de variáveis públicas do Vite, use apenas valores que podem ser expostos no navegador.
-- Revise se não existe `.env`, credenciais, logs ou arquivos de build antigos no repositório.
-- Rode `npm install` e `npm run build` localmente antes do deploy.
+- React
+- Vite
+- Tailwind CSS
+- Lucide React
 
-## Observação importante
+## Como executar o projeto
 
-Como este é um frontend estático, qualquer valor enviado para o navegador pode ser visto por outras pessoas. Se no futuro você precisar de autenticação real, banco de dados protegido ou chaves secretas, isso deve ficar em um backend, não neste repositório.
+1. Instale as dependencias:
+
+```bash
+npm install
+```
+
+2. Inicie o servidor de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+3. Para gerar a versao de producao:
+
+```bash
+npm run build
+```
+
+## Estrutura principal
+
+- `src/App.jsx`: componente principal e gerenciamento do estado das tarefas
+- `src/assets/conponets/AddTasks.jsx`: formulario para adicionar tarefas
+- `src/assets/conponets/Tasks.jsx`: lista e acoes das tarefas
+
+## Cuidados para publicar no GitHub
+
+- nao armazene senhas, tokens ou chaves no frontend
+- mantenha arquivos `.env` fora do repositorio
+- revise o `.gitignore` antes de subir o projeto
+- execute o build localmente antes do deploy
+
+## Seguranca aplicada
+
+- sanitizacao basica dos textos antes de salvar no estado
+- limite de caracteres nos campos do formulario
+- politicas no `index.html` para restringir carregamento de recursos e permissoes do navegador
+
+## Observacao
+
+Como este projeto e um frontend estatico, tudo o que for enviado ao navegador pode ser visto por qualquer pessoa. Se no futuro voce precisar de autenticacao real, banco de dados protegido ou chaves privadas, isso deve ficar em um backend.
